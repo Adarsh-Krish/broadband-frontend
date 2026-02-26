@@ -7,8 +7,10 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+*.sw?
 node_modules
 dist
+.env
 dist-ssr
 *.local
 
@@ -21,4 +23,3 @@ dist-ssr
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
