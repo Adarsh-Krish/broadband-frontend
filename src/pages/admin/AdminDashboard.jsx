@@ -217,13 +217,16 @@ export default function AdminDashboard() {
               <TableHead>
                 <TableRow sx={{ backgroundColor: "#f5f5f5" }}>
                   <TableCell>
+                    <strong>Name</strong>
+                  </TableCell>
+                  <TableCell>
                     <strong>Business</strong>
                   </TableCell>
                   <TableCell>
-                    <strong>Postcode</strong>
+                    <strong>Provider</strong>
                   </TableCell>
                   <TableCell>
-                    <strong>Partner</strong>
+                    <strong>Paying</strong>
                   </TableCell>
                   <TableCell>
                     <strong>Status</strong>
@@ -254,26 +257,11 @@ export default function AdminDashboard() {
                   filtered.map((lead) => (
                     <TableRow key={lead.id} hover>
                       <TableCell>
-                        <strong>{lead.business}</strong>
+                        <strong>{lead.fullName}</strong>
                       </TableCell>
-                      <TableCell>{lead.postcode}</TableCell>
-                      <TableCell>
-                        <Box
-                          sx={{ display: "flex", alignItems: "center", gap: 1 }}
-                        >
-                          <Avatar
-                            sx={{
-                              width: 24,
-                              height: 24,
-                              fontSize: 12,
-                              bgcolor: "primary.main",
-                            }}
-                          >
-                            {lead.partner[0].toUpperCase()}
-                          </Avatar>
-                          {lead.partner}
-                        </Box>
-                      </TableCell>
+                      <TableCell>{lead.businessName}</TableCell>
+                      <TableCell>{lead.currentProvider}</TableCell>
+                      <TableCell>£{lead.monthlyPayment}/mo</TableCell>
                       <TableCell>
                         <Chip
                           label={lead.status}
@@ -282,7 +270,9 @@ export default function AdminDashboard() {
                           sx={{ fontWeight: 600 }}
                         />
                       </TableCell>
-                      <TableCell>{lead.date}</TableCell>
+                      <TableCell>
+                        {new Date(lead.createdAt).toLocaleDateString("en-GB")}
+                      </TableCell>
                       <TableCell>
                         <FormControl size="small" sx={{ minWidth: 130 }}>
                           <Select

@@ -25,7 +25,7 @@ export default function SuccessPage() {
   const location = useLocation();
   const navigate = useNavigate();
   const reference = location.state?.reference || "BB-00000";
-  const businessName = location.state?.businessName || "Your Business";
+  const fullName = location.state?.fullName || "there";
 
   return (
     <Box
@@ -59,7 +59,7 @@ export default function SuccessPage() {
             You're All Set!
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-            Thank you, <strong>{businessName}</strong>. Your enquiry has been
+            Thank you, <strong>{fullName}</strong>. Your enquiry has been
             received and a broadband expert will be in touch within 24 hours.
           </Typography>
 
