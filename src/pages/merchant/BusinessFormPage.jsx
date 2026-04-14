@@ -94,7 +94,7 @@ export default function BusinessFormPage() {
         phone: form.phone,
         address: form.address,
         currentProvider: form.currentProvider,
-        monthlyPayment: form.monthlyPayment,
+        monthlyPayment: Number(form.monthlyPayment),
         contractEndDate: form.contractEndDate,
         notes: form.notes,
       });
